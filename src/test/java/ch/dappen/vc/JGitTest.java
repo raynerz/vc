@@ -48,12 +48,12 @@ public class JGitTest {
             git.commit().setMessage("My Second Java Commit in V1").call();
 
             git.close();
-            
+
         } catch (GitAPIException e) {
             e.printStackTrace();
         }
 
-        //FileUtils.deleteDirectory(new File(path));
+        FileUtils.deleteDirectory(new File(path));
     }
 
 }
