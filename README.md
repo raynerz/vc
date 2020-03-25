@@ -1,2 +1,2 @@
 # vc
-Git for all people
+Git for everyone
