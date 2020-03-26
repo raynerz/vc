@@ -1,61 +1,15 @@
-![](https://github.com/tonymowers/spring-practice/workflows/Test/badge.svg)
+# Project Patient Monitoring
 
-# Spring Boot Practice
+Contains the Maven template of the project.
 
-A repository for practicing with spring boot.
+## Compilation, execution, and documentation
 
-## Run using Maven
+Use the following Maven goals to compile, execute (application and tests), produce de documentation and all the reports:
 
-```
-mvn spring-boot:run
-```
+> `mvn clean package site`
 
-To use the application open your web browser to  [localhost:8080](http://localhost:8080)
+## Documentation
 
-## Develop Frontend
+The documentation and the reports produced by Maven can be consulted with:
 
-With the backend already running execute:
-```
-mvn clean package
-./npm start
-```
-
-## Building and Running Docker Images
-
-### To Build Docker Image to Local Registry
-
-```
-mvn compile jib:dockerBuild -Dimage=spring-practice
-```
-
-### To Run Docker Image from Local Registry
-
-```
-docker run -p 8080:8080 spring-practice
-```
-
-### To Build Docker Image and Publish to Docker Hub
-
-The following will publish to docker hub using the maven project version as the image tag:
-```
-mvn clean compile jib:build
-```
-
-The following will run the docker image from the docker hub repository:
-```
-docker run -p 8080:8080 tony-mowers/spring-practice:<project.version>
-```
-for example:
-```
-docker run -p 8080:8080 tony-mowers/spring-practice:0.4.0-SNAPSHOT
-```
-or
-```
-docker run -p 8080:8080 tony-mowers/spring-practice:latest
-```
-
-The following will publish to docker hub using both the maven project version and 'latest' as the image tags:
-```
-mvn clean compile jib:build -Djib.to.tags=latest
-```
-
+> `firefox target/site/index.html`

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="P.M." xmlns="http://maven.apache.org/DECORATION/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+    <bannerLeft>
+        <name>BFH</name>
+        <src>images/logo-bfh.png</src>
+        <href>http://www.ti.bfh.ch</href>
+    </bannerLeft>
+    <bannerRight>
+        <name>Patient Monitoring</name>
+        <src>images/pm.png</src>
+    </bannerRight>
+    <version position="right"/>
+    <body>
+
+        <menu name="Documentation">
+            <item name="About" href="index.html"/>
+            <item name="Vision" href="Sprint1/vision.html"/>
+            <item name="Domain  model" href="Sprint1/domain_model.html"/>
+            <item name="Actors" href="Sprint1/actors.html"/>
+            <item name="Glossary" href="Sprint1/glossary.html"/>
+            <item name="Non-functional requirements" href="Sprint1/non_func_requirements.html"/>
+            <item name="Product Backlog" href="Sprint1/userstories.html"/>
+            <item name="Sprint I Backlog" href="Sprint1/sprint_backlog.html"/>
+            <item name="Sprint II Backlog" href="Sprint2/sprint_backlog.html"/>
+            <item name="Sprint III Backlog" href="Sprint3/sprint_backlog.html"/>
+            <item name="Sprint IV Backlog" href="Sprint4/sprint_backlog.html"/>
+            <item name="Package Diagrams" href="Sprint4/packageModels4.html"/>
+            <item name="The A-I Graph" href="Sprint3/ai_graph.html"/>
+        </menu>
+
+        <menu name="Use Cases Sprint II">
+            <item name="Login" href="Sprint2/useCase_login.html"/>
+            <item name="Add Patient" href="Sprint2/SSD_addPatient.html"/>
+        </menu>
+
+        <menu name="Use Cases Sprint III">
+            <item name="Start observation period" href="Sprint3/UC_startObsPeriod.html"/>
+            <item name="End observation period" href="Sprint3/UC_endObsPeriod.html"/>
+            <item name="Consult observation period" href="Sprint3/UC_consultObsPeriod.html"/>
+        </menu>
+
+        <menu name="Use Cases Sprint IV">
+            <item name="Start observation period" href="Sprint4/UC_startObsPeriod.html"/>
+            <item name="End observation period" href="Sprint4/UC_endObsPeriod.html"/>
+            <item name="Consult observation period" href="Sprint4/UC_consultObsPeriod.html"/>
+        </menu>
+
+        <menu name="Resources">
+            <item name="Markdown" href="http://commonmark.org" target="_blank"/>
+            <item name="Markdown 60 seconds" href="http://commonmark.org/help " target="_blank"/>
+        </menu>
+
+        <menu ref="reports"/>
+
+
+    </body>
+</project>

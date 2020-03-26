@@ -1,0 +1,26 @@
+
+public class controller{
+
+EntityManager em;
+Doctor doctor;
+
+public void addPatient(name, id){
+
+	Patient p = em.find(Patient.class, id)
+	
+	if (p!= null){
+	throw new Exception("Patient already exists))
+}
+else{
+	Patient patient = doctor.createPatient(name, id);
+	
+	doctor.addPatient(patient);
+	
+	em.persist(doctor);
+	em.getTransaction.commit();
+}
+
+
+}
+
+}
