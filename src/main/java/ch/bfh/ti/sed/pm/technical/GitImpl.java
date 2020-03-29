@@ -2,8 +2,10 @@ package ch.bfh.ti.sed.pm.technical;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.lib.Ref;
 
 import java.io.File;
+import java.util.List;
 
 public class GitImpl implements IGit {
 
@@ -37,6 +39,7 @@ public class GitImpl implements IGit {
         for (File f : files){
             git.add().addFilepattern(f.getName()).call();
         }
+        commit("test");
     }
 
     @Override
@@ -47,6 +50,11 @@ public class GitImpl implements IGit {
     @Override
     public void createBranch(String branchName) throws GitAPIException {
         git.branchCreate().setName(branchName).call();
+    }
+
+    @Override
+    public List<Ref> listBranches() throws GitAPIException {
+        return git.branchList().call();
     }
 
     @Override

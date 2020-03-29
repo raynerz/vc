@@ -29,14 +29,18 @@ public class CreateRepositoryView extends Composite<VerticalLayout> implements H
 
 		FormLayout repoForm = new FormLayout();
 
-		TextField name = new TextField("Name of your repository", "name");
+		TextField name = new TextField("New Repo", "name");
+		TextField newBranch = new TextField("New branch", "branch");
 
-		repoForm.add(name);
+
+		repoForm.add(name, newBranch);
+
+
 
 		HorizontalLayout actions = new HorizontalLayout();
 
 		//Add Patient Button
-		Button createBtn = new Button("Create");
+		Button createBtn = new Button("Create Repo");
 		createBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
 		actions.add(createBtn);
@@ -45,6 +49,16 @@ public class CreateRepositoryView extends Composite<VerticalLayout> implements H
 				new FormLayout.ResponsiveStep("25em", 1),
 				new FormLayout.ResponsiveStep("32em", 2),
 				new FormLayout.ResponsiveStep("40em", 3));
+
+		Button createBranchBtn = new Button("Create branch");
+		createBranchBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+		actions.add(createBranchBtn);
+
+
+
+
+
+
 
 		add(repoForm);
 
@@ -62,6 +76,19 @@ public class CreateRepositoryView extends Composite<VerticalLayout> implements H
 				Notification.show("There has been an error creating the repository", 3000, Notification.Position.TOP_CENTER);
 			}
 
+			});
+
+		createBranchBtn.addClickListener(click ->{
+
+			IGit git = (IGit) VaadinSession.getCurrent().getAttribute("repository");
+
+			try {
+				git.createBranch(newBranch.getValue().trim());
+
+			} catch (GitAPIException e) {
+				e.printStackTrace();
+				Notification.show("There has been an error creating the repository", 3000, Notification.Position.TOP_CENTER);
+			}
 
 		});
 
